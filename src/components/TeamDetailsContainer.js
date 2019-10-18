@@ -8,8 +8,13 @@ class TeamDetailsContainer extends React.Component {
     this.props.loadTeam(Number(this.props.match.params.id));
   }
 
+  onClick = () => {
+    this.props.deleteTeam(this.props.team);
+  };
+
   render() {
-    return <TeamDetails team={this.props.team} />;
+    console.log("PROPS IN DETAILS CONTAINER", this.props);
+    return <TeamDetails team={this.props.team} onClick={this.onClick} />;
   }
 }
 
@@ -19,5 +24,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { loadTeam }
+  { loadTeam, deleteTeam }
 )(TeamDetailsContainer);

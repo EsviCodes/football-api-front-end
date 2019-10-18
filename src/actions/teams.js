@@ -28,7 +28,7 @@ export const TEAM_CREATE_SUCCESS = "TEAM_CREATE_SUCCESS";
 
 const teamCreateSuccess = team => ({
   type: TEAM_CREATE_SUCCESS,
-  team
+  payload: team
 });
 
 export const createTeam = data => dispatch => {
@@ -58,6 +58,25 @@ export const loadTeam = id => (dispatch, getState) => {
     .then(response => {
       // dispatch a TEAMS_FETCHED action that contains the events
       dispatch(teamFetched(response.body));
+    })
+    .catch(console.error);
+};
+
+// Delete ONE team
+export const TEAM_DELETE_SUCCESS = "TEAM_DELETE_SUCCESS";
+
+const teamDeleteSuccess = team => ({
+  type: TEAM_DELETE_SUCCESS,
+  payload: team
+});
+
+export const deleteTeam = team => dispatch => {
+  request
+    .delete(`${baseUrl}/teams/${team.id}`)
+    // .send(team)
+    .then(response => {
+      //   console.log("RES", response);
+      dispatch(teamDeleteSuccess(response.body));
     })
     .catch(console.error);
 };
