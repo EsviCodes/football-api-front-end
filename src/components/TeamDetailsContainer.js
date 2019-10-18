@@ -8,13 +8,14 @@ class TeamDetailsContainer extends React.Component {
     this.props.loadTeam(Number(this.props.match.params.id));
   }
 
-  onClick = () => {
+  onDelete = () => {
     this.props.deleteTeam(this.props.team);
+    this.props.history.push("/");
   };
 
   render() {
     console.log("PROPS IN DETAILS CONTAINER", this.props);
-    return <TeamDetails team={this.props.team} onClick={this.onClick} />;
+    return <TeamDetails team={this.props.team} onDelete={this.onDelete} />;
   }
 }
 

@@ -11,7 +11,9 @@ export default function TeamDetails(props) {
         <div>
           <h1>{props.team.name}</h1>
           <p>{props.team.description}</p>
-          <button onClick={props.onClick}>Delete Team {props.team.name}</button>
+          <button onClick={props.onDelete}>
+            Delete Team {props.team.name}
+          </button>
         </div>
       )}
     </div>

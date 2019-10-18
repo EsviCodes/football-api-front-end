@@ -67,7 +67,7 @@ export const TEAM_DELETE_SUCCESS = "TEAM_DELETE_SUCCESS";
 
 const teamDeleteSuccess = team => ({
   type: TEAM_DELETE_SUCCESS,
-  payload: team
+  payload: team // is null
 });
 
 export const deleteTeam = team => dispatch => {
@@ -76,7 +76,7 @@ export const deleteTeam = team => dispatch => {
     // .send(team)
     .then(response => {
       //   console.log("RES", response);
-      dispatch(teamDeleteSuccess(response.body));
+      dispatch(teamDeleteSuccess(team.id));
     })
     .catch(console.error);
 };

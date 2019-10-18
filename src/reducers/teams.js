@@ -5,7 +5,7 @@ const teams = (state = null, action = {}) => {
     case "TEAM_CREATE_SUCCESS":
       return [...state, { ...action.payload }];
     case "TEAM_DELETE_SUCCESS":
-      return state.filter(team => team !== null);
+      return state.filter(team => team.id !== action.payload);
     default:
       return state;
   }

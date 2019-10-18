@@ -11,8 +11,6 @@ export default function TeamsList(props) {
           : props.teams.map(team => (
               <li key={team.id}>
                 <Link className="link" to={`/teams/${team.id}`}>
-                  {" "}
-                  {/*gives :%7Bteam.id%7D ?*/}
                   {team.name}
                 </Link>{" "}
               </li>

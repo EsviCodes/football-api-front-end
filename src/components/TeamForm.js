@@ -15,15 +15,6 @@ export default function TeamForm(props) {
             value={values.name}
           />
         </label>
-        {/* <label>
-          Date:
-          <input
-            name="date"
-            onChange={onChange}
-            type="text"
-            value={values.date}
-          />
-        </label>*/}
         <label>
           Description:
           <input
