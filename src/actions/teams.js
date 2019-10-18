@@ -14,7 +14,7 @@ export const loadTeams = () => (dispatch, getState) => {
   if (getState().teams) return;
 
   // a GET /events request
-  request(`${baseUrl}/teams`) // teams?
+  request(`${baseUrl}/teams`)
     .then(response => {
       // dispatch a TEAMS_FETCHED action that contains the events
       dispatch(teamsFetched(response.body));
@@ -31,7 +31,7 @@ const teamCreateSuccess = team => ({
 
 export const createTeam = data => dispatch => {
   request
-    .post(`${baseUrl}/teams`) // teams?
+    .post(`${baseUrl}/teams`)
     .send(data)
     .then(response => {
       dispatch(teamCreateSuccess(response.body));

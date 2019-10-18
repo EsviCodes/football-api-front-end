@@ -1,0 +1,33 @@
+html {
+  background-color: lightgreen;
+  text-align: center;
+  color: hotpink;
+  margin: 10%;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.list {
+  background-color: white;
+  margin: 5%;
+  padding: 5%;
+  border: 20px double hotpink;
+}
+
+.link {
+  color: hotpink;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  color: lightgreen;
+  background: hotpink;
+  font-size: 15px;
+  border-radius: 8px;
+  margin-left: 20px;
+}

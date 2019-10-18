@@ -5,9 +5,9 @@ import TeamForm from "./TeamForm";
 
 class CreateTeamFormContainer extends React.Component {
   state = {
-    name: "",
-    date: "",
-    description: ""
+    name: ""
+    // date: "",
+    // description: ""
   };
 
   onChange = team => {
@@ -20,9 +20,9 @@ class CreateTeamFormContainer extends React.Component {
     team.preventDefault();
     this.props.createTeam(this.state);
     this.setState({
-      name: "",
-      date: "",
-      description: ""
+      name: ""
+      //   date: "",
+      //   description: ""
     });
   };
   render() {

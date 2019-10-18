@@ -15,7 +15,7 @@ export default function TeamForm(props) {
             value={values.name}
           />
         </label>
-        <label>
+        {/* <label>
           Date:
           <input
             name="date"
@@ -32,7 +32,7 @@ export default function TeamForm(props) {
             type="text"
             value={values.description}
           />
-        </label>
+        </label> */}
         <button type="submit">Add Team</button>
       </form>
     </div>

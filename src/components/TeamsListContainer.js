@@ -2,6 +2,8 @@ import React from "react";
 import { loadTeams } from "../actions/teams";
 import { connect } from "react-redux";
 import TeamsList from "./TeamsList";
+import CreateTeamFormContainer from "./CreateTeamFormContainer";
+import "./styles/TeamsListContainer.css";
 
 class TeamsListContainer extends React.Component {
   componentDidMount() {
@@ -9,7 +11,12 @@ class TeamsListContainer extends React.Component {
   }
 
   render() {
-    return <TeamsList teams={this.props.teams} />;
+    return (
+      <div className="list">
+        <TeamsList teams={this.props.teams} />
+        <CreateTeamFormContainer />
+      </div>
+    );
   }
 }
 

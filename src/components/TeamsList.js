@@ -10,7 +10,9 @@ export default function TeamsList(props) {
           ? "Loading..."
           : props.teams.map(team => (
               <li key={team.id}>
-                <Link to="/teams/:id">{team.name}</Link>{" "}
+                <Link className="link" to="/teams/:id">
+                  {team.name}
+                </Link>{" "}
               </li>
             ))}
       </ul>
