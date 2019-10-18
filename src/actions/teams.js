@@ -51,7 +51,7 @@ const teamFetched = team => ({
 
 export const loadTeam = id => (dispatch, getState) => {
   // when the state already contains teams, we don't fetch them again
-  if (getState().team) return;
+  if (getState().team && getState().team.id === id) return;
 
   // a GET /team request
   request(`${baseUrl}/teams/${id}`)
