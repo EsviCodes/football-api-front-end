@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { Route } from "react-router-dom";
 import request from "superagent";
 import TeamsListContainer from "./components/TeamsListContainer";
+import TeamDetailsContainer from "./components/TeamDetailsContainer";
 
 export default class App extends Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ export default class App extends Component {
       <Provider store={store}>
         <div>
           <Route path="/" exact component={TeamsListContainer} />
+          <Route path="/teams/:id" component={TeamDetailsContainer} />
         </div>
       </Provider>
     );

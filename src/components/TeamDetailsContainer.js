@@ -1,23 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
-import EventDetails from "./EventDetails";
-import { loadEvent, updateEvent, deleteEvent } from "../actions/events";
+import TeamDetails from "./TeamDetails";
+import { loadTeam, updateTeam, deleteTeam } from "../actions/teams";
 
-class EventDetailsContainer extends React.Component {
+class TeamDetailsContainer extends React.Component {
   componentDidMount() {
-    this.props.loadEvent(Number(this.props.match.params.id));
+    this.props.loadTeam(Number(this.props.match.params.id));
   }
 
   render() {
-    return <EventDetails event={this.props.event} />;
+    return <TeamDetails team={this.props.team} />;
   }
 }
 
 const mapStateToProps = state => ({
-  event: state.event
+  team: state.team
 });
 
 export default connect(
   mapStateToProps,
-  { loadEvent }
-)(EventDetailsContainer);
+  { loadTeam }
+)(TeamDetailsContainer);

@@ -1,16 +1,18 @@
 import React from "react";
 
 export default function TeamDetails(props) {
+  console.log("PROPS FROM DETAILS", props);
+  // const { name, description } = props.team;
   return (
     <div>
-      {props.teams === null
-        ? "Loading..."
-        : props.teams.map(team => (
-            <div>
-              <h1>{team.name}</h1>
-              <p>{team.description}</p>
-            </div>
-          ))}
+      {props.team === null ? (
+        "Loading..."
+      ) : (
+        <div>
+          <h1>{props.team.name}</h1>
+          <p>{props.team.description}</p>
+        </div>
+      )}
     </div>
   );
 }

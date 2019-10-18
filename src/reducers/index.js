@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 import teams from "./teams";
+import team from "./team";
 
 export default combineReducers({
   // your reducers will go here
-  teams
+  teams,
+  team
 });
