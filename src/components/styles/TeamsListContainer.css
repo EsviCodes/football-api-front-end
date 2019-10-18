@@ -38,6 +38,7 @@ button {
   color: lightgreen;
   background: hotpink;
   font-size: 15px;
+  padding: 5px 10px;
   border-radius: 8px;
-  margin: 40px;
+  margin: 20px;
 }
