@@ -19,6 +19,7 @@ h1 {
 .link {
   color: hotpink;
   font-size: 20px;
+  line-height: 2em;
 }
 
 ul {
@@ -26,7 +27,9 @@ ul {
 }
 
 input {
+  margin-top: 10px;
   margin-left: 10px;
+  margin-right: 10px;
   padding: 5px;
   font-size: 15px;
 }
@@ -36,5 +39,5 @@ button {
   background: hotpink;
   font-size: 15px;
   border-radius: 8px;
-  margin-left: 20px;
+  margin: 40px;
 }
