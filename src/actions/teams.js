@@ -1,6 +1,6 @@
 import request from "superagent";
 
-// Fetching TEAMS
+// GET TEAMS
 export const TEAMS_FETCHED = "TEAMS_FETCHED";
 
 const baseUrl = "http://localhost:4000";
@@ -14,7 +14,7 @@ export const loadTeams = () => (dispatch, getState) => {
   // when the state already contains teams, we don't fetch them again
   if (getState().teams) return;
 
-  // a GET /events request
+  // a GET Teams request
   request(`${baseUrl}/teams`)
     .then(response => {
       // dispatch a TEAMS_FETCHED action that contains the events
@@ -23,7 +23,7 @@ export const loadTeams = () => (dispatch, getState) => {
     .catch(console.error);
 };
 
-// Creating Team
+// Creating / POST one Team
 export const TEAM_CREATE_SUCCESS = "TEAM_CREATE_SUCCESS";
 
 const teamCreateSuccess = team => ({
@@ -41,7 +41,7 @@ export const createTeam = data => dispatch => {
     .catch(console.error);
 };
 
-// Fetching one team
+// GET one team
 export const TEAM_FETCHED = "TEAM_FETCHED";
 
 const teamFetched = team => ({
@@ -62,7 +62,7 @@ export const loadTeam = id => (dispatch, getState) => {
     .catch(console.error);
 };
 
-// Delete ONE team
+// DELETE ONE team
 export const TEAM_DELETE_SUCCESS = "TEAM_DELETE_SUCCESS";
 
 const teamDeleteSuccess = team => ({
@@ -77,6 +77,25 @@ export const deleteTeam = team => dispatch => {
     .then(response => {
       //   console.log("RES", response);
       dispatch(teamDeleteSuccess(team.id));
+    })
+    .catch(console.error);
+};
+
+// UPDATE one Team
+export const TEAM_UPDATE_SUCCESS = "TEAM_UPDATE_SUCCESS";
+
+const teamUpdateSuccess = team => ({
+  type: TEAM_UPDATE_SUCCESS,
+  payload: team
+});
+
+export const updateTeam = (id, data) => dispatch => {
+  request
+    .put(`${baseUrl}/teams/${id}`)
+    .send(data)
+    .then(res => {
+      console.log("RES", res.body);
+      dispatch(teamUpdateSuccess(res.body));
     })
     .catch(console.error);
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function TeamForm(props) {
-  console.log("PROPS", props);
+  console.log("PROPS in FROM", props);
   const { values, onSubmit, onChange } = props;
   return (
     <div>
@@ -24,7 +24,7 @@ export default function TeamForm(props) {
             value={values.description}
           />
         </label>
-        <button type="submit">Add Team</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
