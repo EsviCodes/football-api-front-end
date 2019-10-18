@@ -14,10 +14,27 @@ export const loadTeams = () => (dispatch, getState) => {
   if (getState().teams) return;
 
   // a GET /events request
-  request(`${baseUrl}/team`) // teams?
+  request(`${baseUrl}/teams`) // teams?
     .then(response => {
       // dispatch a TEAMS_FETCHED action that contains the events
       dispatch(teamsFetched(response.body));
+    })
+    .catch(console.error);
+};
+
+export const TEAM_CREATE_SUCCESS = "TEAM_CREATE_SUCCESS";
+
+const teamCreateSuccess = team => ({
+  type: TEAM_CREATE_SUCCESS,
+  team
+});
+
+export const createTeam = data => dispatch => {
+  request
+    .post(`${baseUrl}/teams`) // teams?
+    .send(data)
+    .then(response => {
+      dispatch(teamCreateSuccess(response.body));
     })
     .catch(console.error);
 };
